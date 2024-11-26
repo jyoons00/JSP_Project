@@ -31,7 +31,7 @@
 
             <div id="member-edit-cont">
                 <div class="mem-edit-layout">
-                    <form action="${pageContext.request.contextPath}/mypage/mypage.do" method="post" id="editForm" name="editForm"  onsubmit="combinePhoneNumber();">
+                    <form action="${pageContext.request.contextPath}/member/modifyDone.do" method="post" id="editForm" name="editForm"  onsubmit="combinePhoneNumber();">
                         <!-- form 상단에 엄청난 인풋들이 히든으로 숨겨져 있으나 용도를 알 수 없음(아마 암호화 관련?). 생략 -->
 
 

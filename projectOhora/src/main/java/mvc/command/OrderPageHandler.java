@@ -54,7 +54,7 @@ public class OrderPageHandler implements CommandHandler {
 		UserDTO userDTO = null;
 		ArrayList<AddrDTO> addrList = null;
 		ArrayList<CouponDTO> couponList = null;
-		String[] emailArr = null;
+		String email = null;
 		String[] telArr = null;
 	
 		ArrayList<ProductDTO> pdtList = null;
@@ -71,8 +71,9 @@ public class OrderPageHandler implements CommandHandler {
 			}
 
 			if (userDTO != null) {
-				emailArr = userDTO.getUser_email() != null ? userDTO.getUser_email().split("@") : new String[]{"", ""};
+				email = userDTO.getUser_email();
 				telArr = userDTO.getUser_tel() != null ? userDTO.getUser_tel().split("-") : new String[]{"", "", ""};				
+			
 			}
 			
 		} catch (Exception e) {
@@ -84,7 +85,7 @@ public class OrderPageHandler implements CommandHandler {
 		request.setAttribute("pdtCountArray", pdtCountArray);
 		request.setAttribute("addrList", addrList);
 		request.setAttribute("couponList", couponList);
-		request.setAttribute("emailArr", emailArr);
+		request.setAttribute("emailArr", email);
 		request.setAttribute("telArr", telArr);
 		
 		return ORDER_PAGE_PATH;

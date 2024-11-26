@@ -1,4 +1,4 @@
-$("#btn_payment").on("click", function(event) {
+ /* $("#btn_payment").on("click", function(event) {
     if ($("#rzipcode1").val() && $("#raddr1").val() && $("#rphone2_2").val() && $("#rphone2_3").val()
         && $("#rname").val() && $("#email1").val()) {
 
@@ -15,7 +15,7 @@ $("#btn_payment").on("click", function(event) {
         alert("배송지를 입력하세요");
         event.preventDefault();
     }
-});
+});*/
 
 $("a#preaddr").on("click", function(){
 	$("#recent-addr-info").show();

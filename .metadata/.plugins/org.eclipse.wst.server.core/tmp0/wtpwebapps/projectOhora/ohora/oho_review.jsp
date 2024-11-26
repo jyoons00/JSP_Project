@@ -102,12 +102,14 @@ if (sortType == null) {
 		
 				
                             <div class="star-rate-right">
-                                <!-- 그래프 어떻게 그림 -->
+                                <!-- 그래프 -->
                                 <ul class="score-filter-wrap">
                                     <li class="star">
                                         <div class="filter-title">아주 좋아요</div>
                                         <div class="score-graph-wrap">
-                                            <div id="g1" class="score-graph" style="width: max(${ (rating.count_5) / (rating.count_2 + rating.count_1 + rating.count_5 + rating.count_4 + rating.count_3) * 100 }%, 12px)"></div>
+                                            <div id="g1" class="score-graph"
+                                             style="width: max(${ (rating.count_5) / (rating.count_2 + rating.count_1 + rating.count_5 + rating.count_4 + rating.count_3) * 100 }%, 12px)">
+                                            </div>
                                         </div>
                                         <div class="score-count">                                           
                                            ${ rating.count_5}
@@ -276,8 +278,7 @@ if (sortType == null) {
                                             <c:if test="${dto.rev_isrecommend eq 'Y'}">
                                             <span class="rv-badge">오호라 추천 리뷰</span>
                                             </c:if>
-                                            <!-- <span class="rv-badge">한달 사용 리뷰</span> -->
-                                            <!-- 뭐 오호라 추천리뷰 이런거 넣으려면 뱃지 클래스로 span 추가하면됨 -->
+
                                         </div>
 
                                         <div class="lc-score-wrap">

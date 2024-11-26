@@ -876,8 +876,6 @@ function removeProduct(productId) {
 
 					</div>
 					<!-- 스와이퍼 컨테이너 -->
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
 
 				</div>
 

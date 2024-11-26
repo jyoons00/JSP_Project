@@ -297,7 +297,7 @@
                                             </th>
                                             <td>
                                                 <div class="self-email">
-                                                    <input type="text" id="email1" name="email1" value="${ empty userDTO ? '' : emailArr[0] }">
+                                                    <input type="text" id="email1" name="email1" value="${ empty userDTO ? '' : emailArr }" readonly="readonly" >
                                
                                                    
                                                 </div>

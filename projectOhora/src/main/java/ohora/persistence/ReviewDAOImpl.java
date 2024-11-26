@@ -21,7 +21,9 @@ import ohora.domain.UserDTO;
 public class ReviewDAOImpl implements ReviewDAO {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
+	private PreparedStatement pstmt2 = null;
 	private ResultSet rs = null;
+	private ResultSet rs2 = null;
 
 	public ReviewDAOImpl(Connection conn) {
 		super();
@@ -636,21 +638,26 @@ public class ReviewDAOImpl implements ReviewDAO {
 	public JSONObject deleteComment(Connection conn, int cmtId , int revId) throws SQLException {
 		
 		int rowCount = 0;
+		int rowCount2 = 0;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;  
 		System.out.println("임플 넘어온 코멘트아이디: " + cmtId + "// 임플 리뷰 아이디 : " + revId);
 		String sql = " delete from o_comment where cmt_id = ? ";
-
+		String sql2 = "update o_review set rev_comment_count = rev_comment_count -1 WHERE rev_id = ? ";
+		
 		try{
 
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, cmtId);
-		
+			pstmt2 = conn.prepareStatement(sql2);
+			pstmt2.setInt(1, revId);
+			
+			
 			JSONObject jsonRevId = new JSONObject(); 
 			jsonRevId.put("rev_id", revId);
 			
 			rowCount = pstmt.executeUpdate();
-			
+			rowCount2 = pstmt2.executeUpdate();
 			if(rowCount ==1 ) {
 				return jsonRevId;
 			}

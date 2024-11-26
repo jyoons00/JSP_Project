@@ -989,19 +989,6 @@
 
 
 <script>
-// 결제하기 버튼 클릭
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('btn_payment')?.addEventListener('click', function(e) {
-        // 유효성 검사 등 추가 로직
-        
-        // 쿠키에서 주문 상품 삭제
-        deleteOrderedItemsFromCookie();
-        
-        // 폼 제출
-        document.getElementById('order_form').submit();
-    });
-});
-
 function deleteOrderedItemsFromCookie() {
     try {
         // 현재 주문하려는 상품들의 ID 수집
@@ -1049,5 +1036,31 @@ function deleteOrderedItemsFromCookie() {
         console.log('basketCookie:', basketCookie);
     }
 }
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // JSP에서 userId 값을 JavaScript로 전달
+    const userId = '<%= session.getAttribute("userid") != null ? session.getAttribute("userid") : "" %>'; // JSP에서 세션 값 가져오기
+   <% System.out.println("유저 아이디는@@@@@" + userId);%>
+    document.getElementById('btn_payment')?.addEventListener('click', function (e) {
+
+        // 이메일 유효성 검사
+        const emailInput = document.getElementById('email1').value; // 이메일 입력값
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (!emailPattern.test(emailInput)) {
+            alert("올바른 이메일 형식을 입력하세요.");
+            e.preventDefault(); // 기본 동작 중단
+            return false; // 함수 종료
+        }
+
+        // 유효성 검사 통과 후 추가 로직
+        deleteOrderedItemsFromCookie();
+
+        // 폼 제출
+        document.getElementById('order_form').submit();
+    });
+});
 </script>
 </html>

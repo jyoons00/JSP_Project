@@ -381,7 +381,6 @@ $(".infinite-scroll-btn-wrap").on("click" , function() {
 					 success: function(data, textStatus, jqXHR) {
 		currpageUp();
 		
-		let currentRevPage = parseInt($(this).attr('data-currPage'))+1;
 		
         let reviewLi = ''; // 루프 전에 초기화
 

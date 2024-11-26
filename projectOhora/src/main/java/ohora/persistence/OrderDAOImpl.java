@@ -356,7 +356,7 @@ public class OrderDAOImpl implements OrderDAO{
 			throws SQLException {
 		this.conn = conn;
 		int seq = 0;
-		String state = "배송완료";
+		String state = "상품준비중";
 		try {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery("SELECT O_ORDER_SEQ.CURRVAL FROM DUAL ");

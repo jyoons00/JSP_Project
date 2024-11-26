@@ -302,7 +302,7 @@ $(document).on("keydown", ".comment-textarea", function(e) {
 			$(".comment-write-form").submit();
         }
     } else { // userId가 null이거나 비어있는 경우
-        alert("로그인 하시겠습니까?");
+        alert("로그인이 필요합니다.");
     }
 });
 
