@@ -2,7 +2,7 @@
 24.10.30 ~ 24.11.13
 
 ![image](https://github.com/user-attachments/assets/827d9afe-d06d-4b7a-bbbf-9d6494473301)
-#### DB파일 ()<br>
+#### DB파일 (https://github.com/jyoons00/Ohora_Project_DB.git)<br>
 #### 포트폴리오 PPT ()<br>
 
 ## 팀 프로젝트: 네일 전문 쇼핑몰 오호라 실물 웹사이트 구현
