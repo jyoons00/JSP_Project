@@ -26,7 +26,7 @@ public class UserCartDAOImpl implements UserCartDAO{
 		this.conn = conn;
 	}
 
-		  	// 회원 장바구니 버튼 클릭 시 디비 저장 시작 (시훈)
+		  	// 회원 장바구니 버튼 클릭 시 디비 저장 시작 
 		  	@Override
 		  	public Map<String, Object> addCart(int userId, int pdtId, HttpServletRequest request) {
 		  		
