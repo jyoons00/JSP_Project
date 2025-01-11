@@ -27,7 +27,7 @@ public class MemberDAOImpl implements MemberDAO {
 
 
 
-	//회원가입 (준용) DAOimpl
+	//회원가입 DAOimpl
 	@Override
 	public int insert(Connection con, UserDTO dto) throws SQLException {
 		PreparedStatement pstmt = null;
@@ -66,9 +66,9 @@ public class MemberDAOImpl implements MemberDAO {
 		return rowCount;
 
 	}
-	//회원가입(준용) 끝
+	//회원가입 끝
 
-	//아이디 이메일 전화번호 중복체크(준용)
+	//아이디 이메일 전화번호 중복체크
 	@Override
 	public boolean jungbokCK(Connection con, UserDTO dto) throws SQLException {
 		PreparedStatement pstmt = null;
@@ -162,7 +162,7 @@ public class MemberDAOImpl implements MemberDAO {
 
 
 
-	//비번 찾기 아이디찾기 (시훈)
+	//비번 찾기 아이디찾기
 	// 아이디 찾기 시작
 	@Override
 	public String findUser(UserDTO user) {
@@ -367,60 +367,7 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 	// 로그인 시 장바구니 count 처리 끝
 
-
-
-
-
-
-
-
-	/*
-	 * //멤버 개인정보 수정
-	 * 
-	 * @Override public UserDTO selectUserInfo(Connection con, int userId) throws
-	 * SQLException { PreparedStatement pstmt = null; int rowCount = 0;
-	 * 
-	 * 
-	 * UserDTO user = null;
-	 * 
-	 * String sql = " select * " + " from o_user " + " WHERE user_id= ? ";
-	 * 
-	 * try { pstmt = con.prepareStatement(sql);
-	 * 
-	 * pstmt.setLong(1, userId);
-	 * 
-	 * rs = pstmt.executeQuery();
-	 * 
-	 * if ( rs.next()) { user = new UserDTO().builder()
-	 * .user_id(rs.getInt("user_id")) .user_login_id(rs.getString("user_login_id"))
-	 * .user_name(rs.getString("user_name")) .user_email(rs.getString("user_email"))
-	 * .user_tel(rs.getString("user_tel"))
-	 * .rev_good_count(rs.getInt("rev_good_count"))
-	 * .rev_bad_count(rs.getInt("rev_bad_count"))
-	 * .rev_comment_count(rs.getInt("rev_comment_count"))
-	 * .rev_isrecommend(rs.getString("rev_isrecommend") != null ?
-	 * rs.getString("rev_isrecommend") : "N" )
-	 * .rev_isphoto(rs.getString("rev_isphoto")!= null ? rs.getString("rev_isphoto")
-	 * : "N") .rev_age_group(rs.getString("rev_age_group")!= null ?
-	 * rs.getString("rev_age_group") : "모름")
-	 * .rev_option(rs.getString("rev_option")!= null ? rs.getString("rev_option") :
-	 * "없음") .pdt_id(rs.getInt("pdt_id")) .user_name(rs.getString("user_name"))
-	 * .newImg( new Boolean( rs.getString("new") ) )
-	 * //.mediacount(rs.getInt("mediacount") ) .build();
-	 * 
-	 * }
-	 * 
-	 * } catch (Exception e) { System.out.println("캣치 잡혔다 회원가입");
-	 * e.printStackTrace(); } finally { JdbcUtil.close(pstmt); pstmt.close(); }
-	 * 
-	 * 
-	 * return user;
-	 * 
-	 * }
-	 */
-
 	
-	// 재윤
     //멤버 기본정보 불러오기
    @Override
 	public UserDTO selectUserInfo(Connection conn, int userId) throws SQLException {
@@ -470,8 +417,6 @@ public class MemberDAOImpl implements MemberDAO {
 	}			
 	
 	
-	
-	// 세호
 	// 회원 정보 수정
 	public int updateUser(Connection conn, UserDTO dto) throws SQLException, ParseException {
 		String sql = "UPDATE o_user "
